@@ -1,1 +1,0 @@
-# Sniego-kalnas
