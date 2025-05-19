@@ -2,7 +2,7 @@
   {
     "id": "1",
     "model": "Atomic Race GS",
-    "length": "174cm",
+    "length": 174,
     "price": 45,
     "year": 2020,
     "image": "https://sniegokalnas.lt/wp-content/uploads/2024/11/IMG_1915-scaled.jpg"
@@ -10,7 +10,7 @@
   {
     "id": "2",
     "model": "Atomic",
-    "length": "200cm",
+    "length": 200,
     "price": 15,
     "year": 2022,
     "image": "https://sniegokalnas.lt/wp-content/uploads/2024/10/IMG_1170-scaled.jpg"

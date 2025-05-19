@@ -1,10 +1,10 @@
-import "./ski-list.css";
+import "./main-list.css";
 
-export const SkiList = () => {
+export const MainList = () => {
   return (
     <>
       <div className="hero">
-        <h1>Leiskitės į nuotykius su geriausiais pasiūlymais – tik pas mus!</h1>
+        <h1>Leiskitės į nuotykius su geriausiais pasiūlymais - tik pas mus!</h1>
         <p>PREKIŲ ASORTIMENTAS</p>
       </div>
       <div className="section">
