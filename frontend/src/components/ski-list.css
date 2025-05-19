@@ -1,0 +1,57 @@
+/* ski-list.css */
+
+.hero {
+  background-image: url("../../image/AND_SOL_F0062WebOriginalCompressed.avif"); /* Įkelk tikrą nuotraukos URL */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: black;
+  padding: 0 5%;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #f9b233;
+  border: 1px solid #f9b233;
+  padding: 12px 24px;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero p:hover {
+  background-color: #f9b233;
+  color: #000;
+}
+
+.section {
+  padding: 4rem 5%;
+  background-color: #fff;
+  text-align: center;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-title p {
+  font-size: 1rem;
+  color: #555;
+}
