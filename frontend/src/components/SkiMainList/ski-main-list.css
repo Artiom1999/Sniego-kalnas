@@ -1,3 +1,10 @@
+.ski-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 4rem));
+  gap: 1rem;
+  padding: 1rem;
+}
+
 .hero {
   background-image: url("https://www.snowcamp.lt/wp-content/uploads/jproducer-n708F8cxtBY-unsplash1-2048x1151.jpg.webp"); /* Įkelk tikrą nuotraukos URL */
   background-size: cover;
@@ -7,7 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  color: black;
+  color: rgb(10, 150, 197);
   padding: 0 5%;
   position: relative;
 }
@@ -23,8 +30,9 @@
 .hero p {
   font-size: 1rem;
   text-transform: uppercase;
-  color: #f9b233;
-  border: 1px solid #f9b233;
+  color: #126878;
+  border-radius: 8px;
+  border: 1px solid #126878;
   padding: 12px 24px;
   display: inline-block;
   font-weight: 500;
@@ -34,7 +42,7 @@
 }
 
 .hero p:hover {
-  background-color: #f9b233;
+  background-color: #4c97aa;
   color: #000;
 }
 

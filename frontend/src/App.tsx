@@ -1,8 +1,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { MainList } from "./components/SkiList/MainList";
+import { SkiMainList } from "./components/SkiMainList/SkiMainList";
 import { Navigation } from "./components/Navigation/Navigation";
 import { SkiRentList } from "./components/SkiRentList/SkiRentList";
+import { SkiDetails } from "./components/SkiDetails/SkiDetail";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
         <Navigation />
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<MainList />} />
+            <Route path="/" element={<SkiMainList />} />
+            <Route path="/skis/:id" element={<SkiDetails />} />
             <Route path="/nuoma" element={<SkiRentList />} />
           </Routes>
         </main>

@@ -1,15 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { SkiCard } from "../SkiCard.tsx/SkiCard";
-
-export interface Ski {
-  id: string;
-  model: string;
-  length: number;
-  price: number;
-  year: number;
-  image: string;
-}
+import { SkiCard } from "../SkiCard/SkiCard";
+import type { Ski } from "../../types/types";
 
 export const SkiRentList = () => {
   const [skis, setSkis] = useState<Ski[]>([]);
