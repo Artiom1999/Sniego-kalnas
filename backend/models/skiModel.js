@@ -1,15 +1,58 @@
-const fs = require("fs");
-const filePath = "./database/skis.json";
+const mongoose = require("mongoose");
 
-const getAllSkis = () => {
-  const data = fs.readFileSync(filePath);
+const skiSchema = new mongoose.Schema(
+  {
+    make: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    model: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    category: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    radius: {
+      type: Number,
+      required: true,
+    },
+    length: {
+      type: Number,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
+    level: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    condition: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    image: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+  },
+  {
+    timestamps: true,
+    collection: "skis",
+  }
+);
 
-  return JSON.parse(data);
-};
-
-const getSkiById = (id) => {
-  const skis = getAllSkis();
-  return skis.find((ski) => ski.id === id);
-};
-
-module.exports = { getAllSkis, getSkiById };
+module.exports = mongoose.model("Ski", skiSchema);

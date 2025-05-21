@@ -1,18 +1,28 @@
 [
   {
     "id": "1",
-    "model": "Atomic Race GS",
+    "make": "Atomic",
+    "model": "Race GS",
+    "category": "men",
+    "description": "Labai geros slides",
+    "radius": 12,
     "length": 174,
     "price": 45,
-    "year": 2020,
+    "level": "intermediate",
+    "condition": "new",
     "image": "https://sniegokalnas.lt/wp-content/uploads/2024/11/IMG_1915-scaled.jpg"
   },
   {
     "id": "2",
+    "make": "Atomic",
     "model": "Atomic",
-    "length": 200,
-    "price": 15,
-    "year": 2022,
+    "category": "women",
+    "description": "Labai geros slides",
+    "radius": 12,
+    "length": 174,
+    "price": 45,
+    "level": "intermediate",
+    "condition": "new",
     "image": "https://sniegokalnas.lt/wp-content/uploads/2024/10/IMG_1170-scaled.jpg"
   }
 ]
