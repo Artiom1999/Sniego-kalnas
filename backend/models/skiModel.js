@@ -20,6 +20,7 @@ const skiSchema = new mongoose.Schema(
     description: {
       type: String,
       required: true,
+      trim: true,
     },
     radius: {
       type: Number,
