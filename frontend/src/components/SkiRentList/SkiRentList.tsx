@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { SkiCard } from "../SkiCard/SkiCard";
 import type { Ski } from "../../types/types";
+import { API_URL } from "../../constants/golbal";
 
 export const SkiRentList = () => {
   const [skis, setSkis] = useState<Ski[]>([]);
@@ -9,7 +10,7 @@ export const SkiRentList = () => {
   useEffect(() => {
     const fetchSkis = async () => {
       try {
-        const response = await axios.get("http://localhost:3007/api/skis/");
+        const response = await axios.get(`${API_URL}/skis`);
         setSkis(response.data);
       } catch (error) {
         console.log(error);

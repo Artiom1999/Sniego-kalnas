@@ -3,6 +3,7 @@ import "./ski-details.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import type { Ski } from "../../types/types";
+import { API_URL } from "../../constants/golbal";
 
 export const SkiDetails = () => {
   const navigate = useNavigate();
@@ -16,9 +17,7 @@ export const SkiDetails = () => {
   useEffect(() => {
     const fetchSki = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:3007/api/skis/${id}`
-        );
+        const response = await axios.get(`${API_URL}/skis/${id}`);
         setSki(response.data);
       } catch (error) {
         console.log(error);
@@ -39,32 +38,40 @@ export const SkiDetails = () => {
         </div>
         <div className="ski-detail-right">
           <div className="ski-header">
-            <h2>{id}</h2>
-            <p className="ski-year">{ski.year}</p>
+            <h2>
+              {ski?.make} {ski?.model}
+            </h2>
+            <p className="ski-category">Men's skis </p>
+            <div className="ski-description">
+              <p>Nuostabios slides!</p>
+            </div>
           </div>
           <div className="ski-specs">
             <div className="ski-spec">
-              <span className="spec-label">{ski.model}</span>
-              <span className="spec-value">{ski.length}</span>
+              <span className="spec-label">Slidziu ilgis: </span>
+              <span className="spec-value">{ski?.length}</span>
             </div>
             <div className="ski-spec">
-              <span className="spec-label">Tipas</span>
-              <span className="spec-value">Ski</span>
+              <span className="spec-label">Slidžių posūkio spindulys: </span>
+              <span className="spec-value">{ski?.radius}</span>
             </div>
             <div className="ski-spec">
-              <span className="spec-label">Kaina</span>
-              <span className="spec-value">Ski</span>
+              <span className="spec-label">Kaina: </span>
+              <span className="spec-value">{ski?.price ?? "N/A"} Eur </span>
+            </div>
+            <div className="ski-spec">
+              <span className="spec-label">Slidinėjimo lygis: </span>
+              <span className="spec-value">{ski?.level}</span>
+            </div>
+            <div className="ski-spec">
+              <span className="spec-label">Slidžių būklė: </span>
+              <span className="spec-value">{ski?.condition}</span>
             </div>
             <div className="ski-actions">
-              <div className="spec-item">
-                <button className="button button-primary">Rezervuoti</button>
-                <button
-                  className="button button-secondary"
-                  onClick={handleClick}
-                >
-                  Grizti i nuomos pasiulymus
-                </button>
-              </div>
+              <button className="button button-primary">Rezervuoti</button>
+              <button className="button button-secondary" onClick={handleClick}>
+                Grizti i nuomos pasiulymus
+              </button>
             </div>
           </div>
         </div>
