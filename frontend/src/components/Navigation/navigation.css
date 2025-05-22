@@ -20,15 +20,13 @@
 .navigation-logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   text-decoration: none;
   color: #2d3748;
 }
 
-.navigation-logo span {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #63b3ed;
+.navigation-logo img {
+  width: 10rem;
+  height: 70px;
 }
 
 .navigation ul {

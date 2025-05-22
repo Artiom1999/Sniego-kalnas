@@ -6,7 +6,10 @@ export const Navigation = () => {
     <nav className="navigation">
       <div className="navigation-container">
         <Link to="/" className="navigation-logo">
-          <span>Sniego-Kalnas</span>
+          <img
+            src="https://sniegokalnas.lt/wp-content/uploads/2024/08/cropped-lipdukas-m2Wbjjk74vCOZBkk.avif"
+            alt="logo"
+          />
         </Link>
         <ul>
           <li>
