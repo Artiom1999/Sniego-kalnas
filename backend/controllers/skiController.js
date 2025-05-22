@@ -1,21 +1,20 @@
 const Ski = require("../models/skiModel");
 
-const getSkis = (req, res) => {
-  res.json(Ski.getAllSkis());
-};
-
-const getSkiById = (req, res) => {
-  const skiId = req.params.id;
-  const ski = Ski.getSkiById(skiId);
-
-  if (!ski) {
-    return res.status(404).json({ message: "Car not found!" });
+exports.getAllSkis = async (req, res) => {
+  try {
+    const skis = await Ski.find();
+    res.status(200).json(skis);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch skis" });
   }
-
-  res.json(ski);
 };
 
-module.exports = {
-  getSkis,
-  getSkiById,
+exports.createSki = async (req, res) => {
+  try {
+    const newSki = new Ski(req.body);
+    await newSki.save();
+    res.status(201).json({ message: "Ski created successfully" });
+  } catch (error) {
+    res.status(500).json({ error: "Server error" });
+  }
 };

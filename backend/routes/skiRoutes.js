@@ -1,8 +1,10 @@
 const express = require("express");
-const { getSkis, getSkiById } = require("../controllers/skiController");
+const skisController = require("../controllers/skiController");
+
 const router = express.Router();
 
-router.get("/", getSkis);
-router.get("/:id", getSkiById);
+router.get("/", skisController.getAllSkis);
+
+router.post("/", skisController.createSki);
 
 module.exports = router;
