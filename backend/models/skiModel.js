@@ -53,6 +53,7 @@ const skiSchema = new mongoose.Schema(
   {
     timestamps: true,
     collection: "skis",
+    versionKey: false,
   }
 );
 

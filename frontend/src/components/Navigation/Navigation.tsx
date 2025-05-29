@@ -20,7 +20,7 @@ export const Navigation = () => {
           </li>
 
           <li>
-            <Link to="/serivas">Servisas</Link>
+            <Link to="/serisas">Servisas</Link>
           </li>
           <li>
             <Link to="/apie-mus">Apie mus</Link>

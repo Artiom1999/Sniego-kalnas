@@ -22,7 +22,7 @@ export const SkiRentList = () => {
     <>
       <div className="ski-list">
         {skis.map((ski) => (
-          <SkiCard key={ski.id} ski={ski} />
+          <SkiCard key={ski._id} ski={ski} />
         ))}
       </div>
     </>

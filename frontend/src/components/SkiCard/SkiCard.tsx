@@ -9,7 +9,7 @@ interface SkiCardProps {
 export const SkiCard = ({ ski }: SkiCardProps) => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/skis/${ski.id}`);
+    navigate(`/skis/${ski._id}`);
   };
   return (
     <div className="ski-card" onClick={handleClick}>
@@ -18,7 +18,7 @@ export const SkiCard = ({ ski }: SkiCardProps) => {
         <h3>
           {ski.model} {ski.length}
         </h3>
-        <p>{ski.year}</p>
+        <p>{ski.description}</p>
       </div>
     </div>
   );
