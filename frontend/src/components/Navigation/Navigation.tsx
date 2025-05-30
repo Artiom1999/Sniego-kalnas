@@ -1,7 +1,11 @@
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 import "./navigation.css";
 import { Link } from "react-router-dom";
 
 export const Navigation = () => {
+  const { isAuthenticated, logout } = useContext(AuthContext);
+
   return (
     <nav className="navigation">
       <div className="navigation-container">
@@ -25,12 +29,24 @@ export const Navigation = () => {
           <li>
             <Link to="/apie-mus">Apie mus</Link>
           </li>
-
-          <>
-            <li className="login-item">
-              <Link to="/login">Prisijungti</Link>
-            </li>
-          </>
+          {isAuthenticated ? (
+            <>
+              <li>
+                <Link to="/dashboard">Profilis</Link>
+              </li>
+              <li>
+                <button onClick={logout} className="logout-button">
+                  Logout
+                </button>
+              </li>
+            </>
+          ) : (
+            <>
+              <li className="login-item">
+                <Link to="/login">Prisijungti</Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </nav>

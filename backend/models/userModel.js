@@ -49,6 +49,12 @@ userSchema.pre("save", async function (next) {
   }
 });
 
+// tikriname ar slaptazodis atitinka su mongoDB ir zmogaus ivesto
+userSchema.methods.comparePassword = async function (password) {
+  // bcrypt.compare() - palygina du slaptazodzius
+  return bcrypt.compare(password, this.password);
+};
+
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;

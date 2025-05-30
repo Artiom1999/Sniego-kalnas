@@ -1,17 +1,23 @@
 import { useNavigate, useParams } from "react-router-dom";
 import "./ski-details.css";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import type { Ski } from "../../types/types";
 import { API_URL } from "../../constants/golbal";
+import { AuthContext } from "../../context/AuthContext";
 
 export const SkiDetails = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [ski, setSki] = useState<Ski | null>(null);
+  const { user } = useContext(AuthContext);
 
   const handleClick = () => {
     navigate("/nuoma");
+  };
+
+  const handleReserveClick = () => {
+    alert(user);
   };
 
   useEffect(() => {
@@ -68,7 +74,12 @@ export const SkiDetails = () => {
               <span className="spec-value">{ski?.condition}</span>
             </div>
             <div className="ski-actions">
-              <button className="button button-primary">Rezervuoti</button>
+              <button
+                className="button button-primary"
+                onClick={handleReserveClick}
+              >
+                Rezervuoti
+              </button>
               <button className="button button-secondary" onClick={handleClick}>
                 Grizti i nuomos pasiulymus
               </button>
