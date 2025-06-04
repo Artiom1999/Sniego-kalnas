@@ -1,16 +1,24 @@
 /* Hero sekcija */
-.hero {
-  background-color: #f7f7f7;
-  text-align: center;
-  padding: 60px 20px;
+.heroa {
+  background-image: url("../../../image/ChatGPT\ Image\ 4\ июн.\ 2025\ г.\,\ 22_58_35.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: rgb(194, 212, 219);
+  padding: 0 5%;
+  position: relative;
 }
 
-.hero h1 {
-  font-size: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  font-weight: bold;
-  color: #222;
+.heroa h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
 }
 
 /* Sekcijos viršutinė antraštė */

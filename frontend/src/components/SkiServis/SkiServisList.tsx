@@ -3,8 +3,11 @@ import "./ski-servis-list.css";
 export const SkiServisList = () => {
   return (
     <>
-      <div className="hero">
-        <h1>Leiskitės į nuotykius su geriausiais pasiūlymais - tik pas mus!</h1>
+      <div className="heroa">
+        <h1>
+          Įbrėžimų užpildymas "P-TEX" Šoninių briaunų galandinimas Paviršiaus
+          šlifavimas ir lyginimas Vaškavimas Poliravimas
+        </h1>
       </div>
 
       <div className="section">

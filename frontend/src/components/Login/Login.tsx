@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom"; // 👈 pridėta
+import { Link } from "react-router-dom";
 import "../Register/register.css";
 import { AuthContext } from "../../context/AuthContext";
 
@@ -7,15 +7,11 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { login, error } = useContext(AuthContext);
-  const navigate = useNavigate(); // 👈 pridėta
+  const { login } = useContext(AuthContext);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const success = await login(email, password); // 👈 gautas rezultatas
-    if (success) {
-      navigate("/dashboard"); // 👈 naviguojam tik jei sėkmingai prisijungė
-    }
+    await login(email, password);
   };
 
   return (
@@ -50,8 +46,6 @@ export const Login = () => {
             <button type="submit" className="register-button">
               Prisijungti
             </button>
-
-            {error && <p className="error-message">{error}</p>}
           </form>
 
           <div className="login-link">

@@ -3,34 +3,40 @@ const jwt = require("jsonwebtoken");
 
 exports.register = async (req, res) => {
   try {
-    // issitraukiam is request body - name, email, password.
     const { name, email, password } = req.body;
 
-    // jai nera - name, email arba password ,nukeliauja i sita funkcija
+    // 1. Patikriname ar visi laukai uzpildyti
     if (!name || !email || !password) {
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    // tikrinam ar neegzistuoja useris su tokiu email
+    // 2. Patikriname ar email jau egzistuoja musu duomenu bazeje
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({ error: "invaliid credentials" });
+      return res.status(400).json({ error: "Invalid credentials" });
     }
 
-    // sukuriam nauja useri
-    const user = new User({ name, email, password });
+    // 3. Sukuriame nauja vartotoja
+    const user = new User({
+      name,
+      email,
+      password,
+    });
 
     user.save();
 
-    // issaugom useri
+    // 4. sugeneruojame JWT tokena
+    // id - tai yra vartotojo id, kuri leis mums atpazinti kuris cia useris kreipiasi i serveri
+    // JWT_SECREN: Serverio slaptazodis, kad niekas negaletu padirbti tokeno
+    // expiresIn - tai laikas po kurio tokenas bus nebegaliojantis
+    // TOKENAS NERA SAUGOMAS DUOMENU BAZEJE, JIS ATIDUODAMAS NAUDOTOJUI!!!
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
       expiresIn: "30d",
     });
 
-    // jai visi laukeliai uzpilditi, nukeliauja i sita funkcija
     res
       .status(201)
-      .json({ acces_token: token, message: "user registered successfully" });
+      .json({ access_token: token, message: "user registered succesfully" });
   } catch (error) {
     res.status(500).json({ error: "Server error" });
   }
@@ -40,7 +46,7 @@ exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // 1. Patikriname ar zmogus uzpilde visus input laukelius
+    // 1. Patikriname ar zmogus uzpilde visus input laukus
     if (!email || !password) {
       return res.json({ error: "All fields are required" });
     }
@@ -48,17 +54,17 @@ exports.login = async (req, res) => {
     // 2. Patikriname ar useris egzistuoja musu duomenu bazeje
     const existingUser = await User.findOne({ email });
     if (!existingUser) {
-      return res.status(400).json({ error: "invaliid credentials" });
+      return res.status(400).json({ error: "Invalid credentials" });
     }
 
     // 3. Patikriname ar slaptazodis sutampa su duomenu bazeje esanciu slaptazodziu
-    // Grazins true arba false
+    // grazins true/false
     const isPasswordValid = await existingUser.comparePassword(password);
     if (!isPasswordValid) {
-      return res.status(400).json({ error: "invaliid email or password" });
+      return res.status(400).json({ error: "Invalid email or password" });
     }
 
-    // 4. Sugeneruojame JWT tokena galetu issisaugoti i localStorage
+    // 4. Sugeneruojame JWT tokena kad zmogus galetu issisaugoti i localStorage
     const token = jwt.sign(
       { userId: existingUser._id },
       process.env.JWT_SECRET,
@@ -67,10 +73,10 @@ exports.login = async (req, res) => {
       }
     );
 
-    // 5. Atidodame tokena zmogui
+    // 5. Atiduodame tokena zmogui
     res
-      .status(200)
-      .json({ acces_token: token, message: "logged in successfully" });
+      .status(201)
+      .json({ access_token: token, message: "logged in succesfully" });
   } catch (error) {
     res.status(500).json({ error: "Server error" });
   }
@@ -78,24 +84,7 @@ exports.login = async (req, res) => {
 
 exports.getCurrentUser = async (req, res) => {
   try {
-    // 1. Istraukiam tokena is request header
-    const token = req.header("Authorization")?.replace("Bearer ", "");
-
-    // 2. Patikriname ar tokenas egzistuoja
-    if (!token) {
-      return res.status(401).json({ error: "Unauthorized" });
-    }
-    // 3.Patikriname ar tokenas yra validus
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-    // 4. Istraukiam userio domenis is domenu bazes
-    const user = await User.findById(decoded.userId).select("-password");
-
-    if (!user) {
-      return res.status(404).json({ error: "User not found" });
-    }
-
-    res.json(user);
+    res.json(req.user);
   } catch (error) {
     res.status(500).json({ error: "Server error" });
   }

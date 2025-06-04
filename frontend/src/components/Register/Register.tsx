@@ -8,7 +8,7 @@ export const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [passworderror, setPasswordError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   const { register } = useContext(AuthContext);
 
@@ -28,6 +28,7 @@ export const Register = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (validateForm()) {
       await register(name, email, password);
     }
@@ -81,7 +82,7 @@ export const Register = () => {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               />
-              {passworderror && <p className="field-error">{passworderror}</p>}
+              {passwordError && <p className="field-error">{passwordError}</p>}
             </div>
 
             <button type="submit" className="register-button">

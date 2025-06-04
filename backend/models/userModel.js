@@ -11,9 +11,9 @@ const userSchema = new mongoose.Schema(
     email: {
       type: String,
       required: true,
-      // neleidziam susikurti dvieju useriu su tais paciais el pašto adresu
+      // neleidziam susikurti dvieju vartotoju su tuo paciu email
       unique: true,
-      // vistada isaugom email mazosiom raidem
+      trim: true,
       lowercase: true,
     },
     password: {
@@ -22,9 +22,7 @@ const userSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      // galimi varjantai
       enum: ["user", "admin"],
-      // automatiskai sukuria userio role
       default: "user",
     },
   },
@@ -33,14 +31,16 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-// pre-pries 'save' uzkodojame slaptazodi
+// Pries issaugojant slaptazodi ji uzkoduojame su bcrypt ir paverciame i hash'a
 userSchema.pre("save", async function (next) {
-  // jai slaptazodis nebuvo pakeistas, tesiog einame toliau ir neskaitome kodo is sitos funkcijos
+  // Jei slaptazodis nebuvo pakeistas, tiesiog einame toliau ir neskaitome kodo is sitos funkcijos
   if (!this.isModified("password")) {
     return next();
   }
+
   try {
-    // uzkoduojame slaptazodi su bcrypt
+    // Uzkoduojame slaptazodi su bcrypt
+    // salt - tai papildomas slaptazodis, kuri sugeneruoja ant virsaus egzistuojancio slaptazodzio
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt);
     next();
@@ -49,9 +49,9 @@ userSchema.pre("save", async function (next) {
   }
 });
 
-// tikriname ar slaptazodis atitinka su mongoDB ir zmogaus ivesto
+// tikriname ar slaptazodis sutampa su MongoDB ir zmogaus ivestu
 userSchema.methods.comparePassword = async function (password) {
-  // bcrypt.compare() - palygina du slaptazodzius
+  // bcrupt.compare() - palygina du slaptazodzius
   return bcrypt.compare(password, this.password);
 };
 

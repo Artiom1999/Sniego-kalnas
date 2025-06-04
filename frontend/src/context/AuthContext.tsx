@@ -2,7 +2,7 @@ import { createContext, useState, useEffect, type ReactNode } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../constants/golbal";
-import type { User } from "../types/types";
+import { type User } from "../types/types";
 
 interface AuthContextType {
   user: User | null;
@@ -11,7 +11,7 @@ interface AuthContextType {
   isLoading: boolean;
   error: string | null;
   register: (name: string, email: string, password: string) => Promise<void>;
-  login: (email: string, password: string) => Promise<boolean>; // ← Taisyklingas tipas
+  login: (email: string, password: string) => Promise<void>;
   logout: () => void;
 }
 
@@ -22,7 +22,7 @@ export const AuthContext = createContext<AuthContextType>({
   isLoading: true,
   error: null,
   register: async () => {},
-  login: async () => false, // ← pradinė vertė atitinka tipą
+  login: async () => {},
   logout: () => {},
 });
 
@@ -99,7 +99,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
   };
 
-  const login = async (email: string, password: string): Promise<boolean> => {
+  const login = async (email: string, password: string) => {
     try {
       setError(null);
       setIsLoading(true);
@@ -113,15 +113,13 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       setToken(res.data.access_token);
       setUser(res.data.user);
       setIsAuthenticated(true);
-
-      return true;
+      navigate("/dashboard");
     } catch (error: unknown) {
       const errorMessage =
         axios.isAxiosError(error) && error.response?.data?.error
           ? error.response.data.error
           : "Login failed. Please check your credentials.";
       setError(errorMessage);
-      return false;
     } finally {
       setIsLoading(false);
     }

@@ -8,7 +8,7 @@ export const Dashboard = () => {
     <div className="dashboard-container">
       <div className="dashboard-header">
         <h1>Profilis</h1>
-        <p>Sveiki atvyke{user?.email}</p>
+        <p>Sveiki atvyke! {user?.name}</p>
       </div>
     </div>
   );
