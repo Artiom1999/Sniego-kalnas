@@ -5,8 +5,8 @@ export const SkiServisList = () => {
     <>
       <div className="heroa">
         <h1>
-          Įbrėžimų užpildymas "P-TEX" Šoninių briaunų galandinimas Paviršiaus
-          šlifavimas ir lyginimas Vaškavimas Poliravimas
+          Įbrėžimų užpildymas. Šoninių briaunų galandinimas. Paviršiaus
+          šlifavimas ir lyginimas. Vaškavimas Poliravimas
         </h1>
       </div>
 
