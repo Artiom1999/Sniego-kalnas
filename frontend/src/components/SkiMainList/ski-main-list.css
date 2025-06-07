@@ -186,6 +186,7 @@
 }
 
 .rental-hero__button {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   font-size: 1rem;
   text-transform: uppercase;
   color: #fff;
