@@ -24,7 +24,7 @@ export const Navigation = () => {
           </li>
 
           <li>
-            <Link to="/serisas">Servisas</Link>
+            <Link to="/servisas">Servisas</Link>
           </li>
           <li>
             <Link to="/about-us">Apie mus</Link>

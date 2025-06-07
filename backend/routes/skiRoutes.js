@@ -4,6 +4,7 @@ const authMiddleware = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
+router.get("/brands", skisController.getBrands);
 router.get("/", skisController.getSkis);
 router.get("/:id", skisController.getSkiById);
 

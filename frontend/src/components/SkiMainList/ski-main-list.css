@@ -1,12 +1,5 @@
-.ski-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 4rem));
-  gap: 1rem;
-  padding: 1rem;
-}
-
 .hero {
-  background-image: url("https://www.snowcamp.lt/wp-content/uploads/jproducer-n708F8cxtBY-unsplash1-2048x1151.jpg.webp"); /* Įkelk tikrą nuotraukos URL */
+  background-image: url("https://www.snowcamp.lt/wp-content/uploads/jproducer-n708F8cxtBY-unsplash1-2048x1151.jpg.webp");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -44,6 +37,26 @@
 .hero p:hover {
   background-color: #4c97aa;
   color: #000;
+}
+
+.ski-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 kortelės per eilutę */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.ski-card img {
+  width: 320px;
+  height: 500px; /* pailga nuotrauka */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 1200px) {
+  .ski-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /* why-choose-us */

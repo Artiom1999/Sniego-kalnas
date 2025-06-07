@@ -7,6 +7,10 @@ export const SkiMainList = () => {
     navigate("/nuoma");
   };
 
+  const handleClickServise = () => {
+    navigate("/servisas");
+  };
+
   return (
     <>
       <div className="hero">
@@ -70,7 +74,9 @@ export const SkiMainList = () => {
           - pas mus rasite tinkamą inventorių, kad galėtumėte mėgautis žiemos
           pramogomis.
         </p>
-        <button className="rental-hero__button">NUOMOTIS</button>
+        <button className="rental-hero__button" onClick={handleClick}>
+          NUOMOTIS
+        </button>
       </div>
 
       {/*service-section*/}
@@ -90,7 +96,12 @@ export const SkiMainList = () => {
             sąlygas. Be to, vašuoajame ir poliruojame įrangą, kad ji tarnautų
             ilgiau ir būtų paruošta efektyviai slysti bet kokiomis sąlygomis.
           </p>
-          <button className="service-section__button">SERVISAS</button>
+          <button
+            className="service-section__button"
+            onClick={handleClickServise}
+          >
+            SERVISAS
+          </button>
         </div>
         <div className="service-section__image"></div>
       </div>

@@ -1,0 +1,39 @@
+.ski-rent-list-container {
+  display: flex;
+  padding: 1rem;
+}
+
+.ski-rent-filter {
+  width: 250px;
+  padding: 1rem;
+  border-right: 1px solid #ddd;
+}
+
+.filter-section {
+  margin-bottom: 1.5rem;
+}
+
+.filter-section h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.filter-section label {
+  display: block;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+}
+
+.price-values {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.ski-list {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}

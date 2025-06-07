@@ -3,7 +3,22 @@ const Ski = require("../models/skiModel");
 
 exports.getSkis = async (req, res) => {
   try {
-    const skis = await Ski.find();
+    const { brand, minPrice, maxPrice } = req.query;
+
+    const filter = {};
+
+    if (brand) {
+      filter.make = brand; // <- ČIA pagrindinis momentas!
+    }
+
+    if (minPrice && maxPrice) {
+      filter.price = {
+        $gte: parseFloat(minPrice),
+        $lte: parseFloat(maxPrice),
+      };
+    }
+
+    const skis = await Ski.find(filter);
     res.status(200).json(skis);
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch skis" });
@@ -70,5 +85,14 @@ exports.updateSki = async (req, res) => {
     res
       .status(500)
       .json({ message: "Failed to update ski", error: error.message });
+  }
+};
+
+exports.getBrands = async (req, res) => {
+  try {
+    const brands = await Ski.distinct("make");
+    res.status(200).json(brands);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch brands" });
   }
 };
