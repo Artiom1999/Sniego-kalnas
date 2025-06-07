@@ -94,7 +94,7 @@ export const SkiServisList = () => {
                 <td>
                   Briaunų galandinimas
                   <br />
-                  Pagal 86° – 89° laipsnį
+                  Pagal 86° - 89° laipsnį
                 </td>
                 <td>5€</td>
               </tr>
@@ -148,7 +148,7 @@ export const SkiServisList = () => {
                 <td>
                   Briaunų galandinimas
                   <br />
-                  Pagal 86° – 89° laipsnį
+                  Pagal 86° - 89° laipsnį
                 </td>
                 <td>5€</td>
               </tr>

@@ -1,0 +1,200 @@
+.about-hero {
+  position: relative;
+  background-image: url("https://scontent.fvno8-1.fna.fbcdn.net/v/t39.30808-6/481041735_614246741531546_8976324791943959855_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=n7tboqhqgT0Q7kNvwE3nVuy&_nc_oc=Adn6Mu2LZ7UJ_YX5sANB5FmRbqAHuGZTwGpAwUyfQAVFmisZNp6hs163RAA4M9rK2jo&_nc_zt=23&_nc_ht=scontent.fvno8-1.fna&_nc_gid=vLEJCmxm0Q4M20S9Gw2egQ&oh=00_AfMjuyJ6_U-DTxsxTv1fW6BLrXvjfy8_OF85MknFetrPqw&oe=6849FE9B");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 5%;
+  filter: brightness(80%); /* 100% = originalas, 60% = pritemdyta */
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Čia 0.4 tamsumas, gali keisti */
+  z-index: 1;
+}
+
+.about-hero h1,
+.about-hero p {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* about-section */
+
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 5%;
+  background-color: #fff;
+}
+
+.about-section__image {
+  flex: 1 1 500px;
+  min-height: 400px;
+  background-image: url("https://scontent.fvno8-1.fna.fbcdn.net/v/t39.30808-6/481778675_609122208710666_4121644790752616530_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=i1lYCn_N9zwQ7kNvwECpkkl&_nc_oc=AdlFWiwAUDsd2zHLr5T9aC6ZA4ur6J8tdgTzcZtUqKmVHbnSzEVyaeb0fLotAZRdsxk&_nc_zt=23&_nc_ht=scontent.fvno8-1.fna&_nc_gid=JV485ru_8LHC81er6-jw8w&oh=00_AfPFYyCB4Ls1bUWDFXtthyxtt9OmD7l4o8chSSr7P8dYfQ&oe=6849F137"); /* tavo nuotraukos kelias */
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+}
+
+.about-section__text {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.about-section__caption {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #444;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.about-section__content {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #111;
+}
+
+/* about-section */
+
+.about-goal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 4rem 5%;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.about-goal__left {
+  flex: 1 1 200px;
+}
+
+.about-goal__caption {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #111;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.about-goal__right {
+  flex: 3 1 600px;
+}
+
+.about-goal__right h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 1.5rem;
+}
+
+.about-goal__right p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+/* about-section */
+
+.about-rental {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 5%;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.about-rental__left {
+  flex: 1 1 500px;
+}
+
+.about-rental__left h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 1.5rem;
+}
+
+.about-rental__left p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.about-rental__right {
+  flex: 1 1 400px;
+  min-height: 400px;
+  background-image: url("https://sniegokalnas.lt/wp-content/uploads/2024/10/full-shot-people-skiing-together-edited-768x1024.jpg"); /* tavo nuotrauka */
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+}
+
+/* footer */
+
+.footer {
+  background-color: #fef8dc;
+  color: #222;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  text-align: left;
+}
+
+.footer h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer li {
+  margin: 5px 0;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer small {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding-top: 30px;
+  font-size: 0.9rem;
+  color: #555;
+}

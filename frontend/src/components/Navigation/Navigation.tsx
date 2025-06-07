@@ -27,7 +27,7 @@ export const Navigation = () => {
             <Link to="/serisas">Servisas</Link>
           </li>
           <li>
-            <Link to="/apie-mus">Apie mus</Link>
+            <Link to="/about-us">Apie mus</Link>
           </li>
           {isAuthenticated ? (
             <>
