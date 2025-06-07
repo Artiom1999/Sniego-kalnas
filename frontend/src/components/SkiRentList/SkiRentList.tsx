@@ -73,7 +73,7 @@ export const SkiRentList = () => {
         </div>
 
         <div className="filter-section">
-          <h3>Kaina</h3>
+          <h3>Kaina per diena</h3>
           <Slider
             range
             min={5}

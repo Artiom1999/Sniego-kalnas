@@ -77,7 +77,7 @@ export const Dashboard = () => {
     <div className="dashboard-container">
       <div className="dashboard-header">
         <h1>Profilis</h1>
-        <p className="welcome-text">Sveiki Atvyke!, {user?.email}!</p>
+        <p className="welcome-text">Sveiki Atvyke, {user?.name}!</p>
       </div>
 
       {isAdmin && (

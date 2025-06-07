@@ -7,6 +7,10 @@ export const SkiMainList = () => {
     navigate("/nuoma");
   };
 
+  const handleClicktoAboutUs = () => {
+    navigate("/about-us");
+  };
+
   const handleClickServise = () => {
     navigate("/servisas");
   };
@@ -15,7 +19,9 @@ export const SkiMainList = () => {
     <>
       <div className="hero">
         <h1>Leiskitės į nuotykius su geriausiais pasiūlymais - tik pas mus!</h1>
-        <p onClick={handleClick}>PREKIŲ ASORTIMENTAS</p>
+        <button className="rental-hero__button" onClick={handleClicktoAboutUs}>
+          APIE MUS
+        </button>
       </div>
 
       {/* why-choose-us */}

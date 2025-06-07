@@ -91,7 +91,7 @@ export const AdminSkisTab = () => {
                 <td>{ski.make}</td>
                 <td>{ski.model}</td>
                 <td>{ski.condition}</td>
-                <td>${ski.price}/day</td>
+                <td>{ski.price}€/day</td>
                 <td>
                   <button className="btn-edit" onClick={() => handleEdit(ski)}>
                     Edit

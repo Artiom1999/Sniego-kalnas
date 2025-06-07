@@ -64,7 +64,7 @@ export const SkiDetails = () => {
               <span className="spec-value">{ski?.radius}</span>
             </div>
             <div className="ski-spec">
-              <span className="spec-label">Kaina: </span>
+              <span className="spec-label">Kaina per diena: </span>
               <span className="spec-value">{ski?.price ?? "N/A"} Eur </span>
             </div>
             <div className="ski-spec">

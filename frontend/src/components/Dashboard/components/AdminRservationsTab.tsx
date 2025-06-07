@@ -78,7 +78,7 @@ export const AdminReservationsTab = () => {
                 </td>
                 <td>{formatDate(reservation.startDate)}</td>
                 <td>{formatDate(reservation.endDate)}</td>
-                <td>${reservation.totalPrice}</td>
+                <td>€{reservation.totalPrice}</td>
                 <td>{formatDate(reservation.createdAt)}</td>
               </tr>
             ))}
