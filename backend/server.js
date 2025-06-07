@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const skiRoutes = require("./routes/skiRoutes");
 const authRoutes = require("./routes/authRoutes");
+const reservationRoutes = require("./routes/reservationRoutes");
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 
 app.use("/api/skis", skiRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/reservations", reservationRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI)

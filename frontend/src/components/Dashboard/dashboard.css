@@ -100,7 +100,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.reservation-car-info {
+.reservation-ski-info {
   width: 200px;
   padding: 15px;
   background-color: #f1f3f4;
@@ -108,7 +108,7 @@
   flex-direction: column;
 }
 
-.reservation-car-info h4 {
+.reservation-ski-info h4 {
   margin-top: 0;
   margin-bottom: 10px;
   font-size: 1.1rem;
@@ -177,7 +177,7 @@
     flex-direction: column;
   }
 
-  .reservation-car-info {
+  .reservation-ski-info {
     width: 100%;
     padding: 15px;
   }
@@ -367,7 +367,7 @@
   background-color: #f0f4f9;
 }
 
-.car-image {
+.ski-image {
   width: 70px;
   height: 45px;
   object-fit: cover;
@@ -375,7 +375,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.car-details {
+.ski-details {
   display: flex;
   align-items: center;
   gap: 12px;

@@ -1,12 +1,13 @@
 const express = require("express");
 const skisController = require("../controllers/skiController");
+const authMiddleware = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
-router.get("/", skisController.getAllSkis);
+router.get("/", skisController.getSkis);
+router.get("/:id", skisController.getSkiById);
 
-router.post("/", skisController.createSki);
-
-router.get("/:id", skisController.getskibyid);
+router.post("/", authMiddleware, skisController.createSki);
+router.put("/:id", authMiddleware, skisController.updateSki);
 
 module.exports = router;

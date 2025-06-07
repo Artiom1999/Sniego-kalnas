@@ -5,42 +5,44 @@ import { useContext, useEffect, useState } from "react";
 import type { Ski } from "../../types/types";
 import { API_URL } from "../../constants/golbal";
 import { AuthContext } from "../../context/AuthContext";
+import { ReservationModal } from "../ReservationModal/ReservationModal";
 
 export const SkiDetails = () => {
   const navigate = useNavigate();
-  const { id } = useParams();
   const [ski, setSki] = useState<Ski | null>(null);
+  // useParams yra HOOK kuris naudojamas gauti URL parametrus pvz id => :id
+  const { id } = useParams();
   const { user } = useContext(AuthContext);
+  const [isReservationModalVisible, setIsReservationModalVisible] =
+    useState(false);
 
-  const handleClick = () => {
+  useEffect(() => {
+    const fetchSkiDetails = async () => {
+      const response = await axios.get(`${API_URL}/skis/${id}`);
+      setSki(response.data);
+    };
+
+    fetchSkiDetails();
+  }, []);
+
+  const handleBackClick = () => {
     navigate("/nuoma");
   };
 
   const handleReserveClick = () => {
-    alert(user);
+    if (!user) {
+      navigate("/login");
+      return;
+    }
+
+    setIsReservationModalVisible(true);
   };
-
-  useEffect(() => {
-    const fetchSki = async () => {
-      try {
-        const response = await axios.get(`${API_URL}/skis/${id}`);
-        setSki(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchSki();
-  }, []);
-
-  if (!ski) {
-    return <p>Loading...</p>;
-  }
 
   return (
     <div className="ski-detail">
       <div className="ski-detail-container">
         <div className="ski-detail-left">
-          <img src={ski.image} alt="Ski" className="ski-detail-image" />
+          <img src={ski?.image} alt="Ski" className="ski-detail-image" />
         </div>
         <div className="ski-detail-right">
           <div className="ski-header">
@@ -80,13 +82,22 @@ export const SkiDetails = () => {
               >
                 Rezervuoti
               </button>
-              <button className="button button-secondary" onClick={handleClick}>
+              <button
+                className="button button-secondary"
+                onClick={handleBackClick}
+              >
                 Grizti i nuomos pasiulymus
               </button>
             </div>
           </div>
         </div>
       </div>
+      {isReservationModalVisible && ski && (
+        <ReservationModal
+          onModalClose={() => setIsReservationModalVisible(false)}
+          ski={ski}
+        />
+      )}
     </div>
   );
 };

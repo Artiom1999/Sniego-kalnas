@@ -16,9 +16,9 @@ export const SkiCard = ({ ski }: SkiCardProps) => {
       <img src={ski.image} alt="Ski" className="ski-card-image" />
       <div className="ski-card-content">
         <h3>
-          {ski.model} {ski.length}
+          {ski.make} {ski.model} {ski.length}
         </h3>
-        <p>{ski.description}</p>
+        <p>{ski.category}</p>
       </div>
     </div>
   );

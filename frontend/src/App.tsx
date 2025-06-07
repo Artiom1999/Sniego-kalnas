@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { SkiMainList } from "./components/SkiMainList/SkiMainList";
 import { Navigation } from "./components/Navigation/Navigation";
 import { SkiRentList } from "./components/SkiRentList/SkiRentList";
-import { SkiDetails } from "./components/SkiDetails/SkiDetail";
+import { SkiDetails } from "./components/SkiDetails/SkiDetails";
 import { SkiServisList } from "./components/SkiServis/SkiServisList";
 import { Register } from "./components/Register/Register";
 import { Login } from "./components/Login/Login";

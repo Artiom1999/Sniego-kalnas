@@ -20,3 +20,34 @@ export interface User {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface Reservation {
+  _id: string;
+  skiId: string;
+  userId: string;
+  startDate: string;
+  endDate: string;
+  totalPrice: number;
+  createdAt: string;
+  updatedAt: string;
+  ski: {
+    _id: string;
+    make: string;
+    model: string;
+    image: string;
+  };
+}
+
+export interface AdminReservation {
+  _id: string;
+  ski: Ski;
+  startDate: string;
+  endDate: string;
+  totalPrice: number;
+  createdAt: string;
+  user: {
+    _id: string;
+    name: string;
+    email: string;
+  };
+}
