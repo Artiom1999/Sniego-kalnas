@@ -4,7 +4,7 @@ import "./ski-main-list.css";
 export const SkiMainList = () => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/nuoma");
+    navigate("/rent");
   };
 
   const handleClicktoAboutUs = () => {

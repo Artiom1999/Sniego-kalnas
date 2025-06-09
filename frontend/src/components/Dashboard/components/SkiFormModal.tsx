@@ -4,7 +4,6 @@ import "./ski-form-modal.css";
 
 interface SkiFormModalProps {
   onModalClose: () => void;
-  // Omit<Ski, "_id"> is used to exclude the _id field from the form data
   onSubmit: (formData: Omit<Ski, "_id">) => Promise<void>;
   editSki: Ski | null;
 }
@@ -57,21 +56,16 @@ export const SkiFormModal: React.FC<SkiFormModalProps> = ({
     await onSubmit(formData);
   };
 
-  const handleFeaturesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const featuresString = e.target.value;
-    setFeatures(featuresString.split(",").map((item) => item.trim()));
-  };
-
   return (
     <div className="modal">
       <div className="modal-content">
         <span className="close" onClick={onModalClose}>
           &times;
         </span>
-        <h2>{editSki ? "Edit Ski" : "Add New Ski"}</h2>
+        <h2>{editSki ? "Redaguoti slidęs" : "Pridėti naują slidęs"}</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Make:</label>
+            <label>Gamintojas:</label>
             <input
               value={make}
               onChange={(e) => setMake(e.target.value)}
@@ -79,7 +73,7 @@ export const SkiFormModal: React.FC<SkiFormModalProps> = ({
             />
           </div>
           <div className="form-group">
-            <label>Model:</label>
+            <label>Modelis:</label>
             <input
               value={model}
               onChange={(e) => setModel(e.target.value)}
@@ -87,7 +81,7 @@ export const SkiFormModal: React.FC<SkiFormModalProps> = ({
             />
           </div>
           <div className="form-group">
-            <label>Category:</label>
+            <label>Kategorija:</label>
             <textarea
               value={category}
               onChange={(e) => setCategory(e.target.value)}
@@ -95,7 +89,7 @@ export const SkiFormModal: React.FC<SkiFormModalProps> = ({
             ></textarea>
           </div>
           <div className="form-group">
-            <label>Description:</label>
+            <label>Aprašymas:</label>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -103,7 +97,7 @@ export const SkiFormModal: React.FC<SkiFormModalProps> = ({
             ></textarea>
           </div>
           <div className="form-group">
-            <label>Radius:</label>
+            <label>Radijus:</label>
             <input
               type="number"
               value={radius}
@@ -112,7 +106,7 @@ export const SkiFormModal: React.FC<SkiFormModalProps> = ({
             />
           </div>
           <div className="form-group">
-            <label>Length:</label>
+            <label>Ilgis:</label>
             <input
               type="number"
               value={length}
@@ -121,7 +115,7 @@ export const SkiFormModal: React.FC<SkiFormModalProps> = ({
             />
           </div>
           <div className="form-group">
-            <label>Price per day:</label>
+            <label>Kaina už dieną:</label>
             <input
               type="number"
               value={price}
@@ -130,7 +124,7 @@ export const SkiFormModal: React.FC<SkiFormModalProps> = ({
             />
           </div>
           <div className="form-group">
-            <label>Level:</label>
+            <label>Lygis:</label>
             <input
               value={level}
               onChange={(e) => setLevel(e.target.value)}
@@ -138,16 +132,15 @@ export const SkiFormModal: React.FC<SkiFormModalProps> = ({
             />
           </div>
           <div className="form-group">
-            <label>Condition:</label>
+            <label>Būklė:</label>
             <input
               value={condition}
               onChange={(e) => setCondition(e.target.value)}
               required
             />
           </div>
-
           <div className="form-group">
-            <label>Image URL:</label>
+            <label>Nuotraukos URL:</label>
             <input
               value={image}
               onChange={(e) => setImage(e.target.value)}
@@ -155,13 +148,10 @@ export const SkiFormModal: React.FC<SkiFormModalProps> = ({
             />
           </div>
           <button type="submit" className="btn">
-            {editSki ? "Update Ski" : "Add Ski"}
+            {editSki ? "Atnaujinti slidęs" : "Pridėti slidęs"}
           </button>
         </form>
       </div>
     </div>
   );
 };
-function setFeatures(arg0: string[]) {
-  throw new Error("Function not implemented.");
-}

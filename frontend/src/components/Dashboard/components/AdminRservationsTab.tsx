@@ -39,22 +39,22 @@ export const AdminReservationsTab = () => {
 
   return (
     <div className="admin-tab">
-      <h2>All Reservations</h2>
+      <h2>Visos rezervacijos</h2>
 
       {loading ? (
-        <p>Loading reservations...</p>
+        <p>Kraunamos rezervacijos...</p>
       ) : allReservations.length === 0 ? (
-        <p>No reservations found</p>
+        <p>Rezervacijų nerasta</p>
       ) : (
         <table className="reservation-table">
           <thead>
             <tr>
-              <th>User</th>
-              <th>Ski</th>
-              <th>Start Date</th>
-              <th>End Date</th>
-              <th>Total Price</th>
-              <th>Booking Date</th>
+              <th>Naudotojas</th>
+              <th>Slidės</th>
+              <th>Pradžios data</th>
+              <th>Pabaigos data</th>
+              <th>Bendra kaina</th>
+              <th>Rezervacijos data</th>
             </tr>
           </thead>
           <tbody>

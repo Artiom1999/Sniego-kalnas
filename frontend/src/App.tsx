@@ -22,7 +22,7 @@ function App() {
             <Routes>
               <Route path="/" element={<SkiMainList />} />
               <Route path="/skis/:id" element={<SkiDetails />} />
-              <Route path="/nuoma" element={<SkiRentList />} />
+              <Route path="/rent" element={<SkiRentList />} />
               <Route path="/servisas" element={<SkiServisList />} />
               <Route path="/about-us" element={<AboutUs />} />
               <Route path="/register" element={<Register />} />

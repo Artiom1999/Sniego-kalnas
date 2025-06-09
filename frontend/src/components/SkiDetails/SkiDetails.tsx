@@ -26,7 +26,7 @@ export const SkiDetails = () => {
   }, []);
 
   const handleBackClick = () => {
-    navigate("/nuoma");
+    navigate("/rent");
   };
 
   const handleReserveClick = () => {

@@ -60,20 +60,20 @@ export const AdminUsersTab = () => {
 
   return (
     <div className="admin-tab">
-      <h2>All Users</h2>
+      <h2>Visi vartotojai</h2>
 
       {loading ? (
-        <p>Loading users...</p>
+        <p>Įkeliami naudotojai...</p>
       ) : allUsers.length === 0 ? (
-        <p>No users found</p>
+        <p>Naudotojų nerasta</p>
       ) : (
         <table className="reservation-table">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Actions</th>
+              <th>Vardas</th>
+              <th>El. paštas</th>
+              <th>Vaidmuo</th>
+              <th>Veiksmai</th>
             </tr>
           </thead>
           <tbody>
@@ -84,7 +84,7 @@ export const AdminUsersTab = () => {
                 <td>{user.role}</td>
                 <td>
                   <button className="btn-edit" onClick={() => handleEdit(user)}>
-                    Edit
+                    Redaguoti
                   </button>
                 </td>
               </tr>

@@ -62,24 +62,24 @@ export const AdminSkisTab = () => {
   return (
     <div className="admin-tab">
       <div className="admin-header">
-        <h2>Ski Management</h2>
+        <h2>Inventoriaus valdymas</h2>
         <button className="btn" onClick={() => setShowForm(true)}>
-          Add New Ski
+          Pridėti naujas slides
         </button>
       </div>
 
       {loading ? (
-        <p>Loading skis...</p>
+        <p>Kraunamos slidės...</p>
       ) : (
         <table className="reservation-table">
           <thead>
             <tr>
-              <th>Image</th>
-              <th>Make</th>
-              <th>Model</th>
-              <th>Condition</th>
-              <th>Price</th>
-              <th>Actions</th>
+              <th>Nuotrauka</th>
+              <th>Gamintojas</th>
+              <th>Modelis</th>
+              <th>Būklė</th>
+              <th>Kaina</th>
+              <th>Veiksmai</th>
             </tr>
           </thead>
           <tbody>
@@ -94,7 +94,7 @@ export const AdminSkisTab = () => {
                 <td>{ski.price}€/day</td>
                 <td>
                   <button className="btn-edit" onClick={() => handleEdit(ski)}>
-                    Edit
+                    Redaguoti
                   </button>
                 </td>
               </tr>

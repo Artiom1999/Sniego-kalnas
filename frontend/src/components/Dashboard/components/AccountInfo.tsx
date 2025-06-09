@@ -7,16 +7,16 @@ interface AccountInfoProps {
 export const AccountInfo = ({ user }: AccountInfoProps) => {
   return (
     <div className="dashboard-card">
-      <h3>Account Information</h3>
+      <h3>Paskyros informacija</h3>
       <div className="account-info">
         <p>
-          <strong>Name:</strong> {user?.name}
+          <strong>Vardas:</strong> {user?.name}
         </p>
         <p>
-          <strong>Email:</strong> {user?.email}
+          <strong>El. paštas:</strong> {user?.email}
         </p>
         <p>
-          <strong>Role:</strong> {user?.role}
+          <strong>Vartotojo vaidmuo:</strong> {user?.role}
         </p>
       </div>
     </div>

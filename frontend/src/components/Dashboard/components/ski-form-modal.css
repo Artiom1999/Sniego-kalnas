@@ -73,3 +73,41 @@
 .btn:hover {
   background-color: #0069d9;
 }
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+    padding: 1rem;
+    max-height: 90vh;
+    box-sizing: border-box;
+    border-radius: 12px;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .close {
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: 0.95rem;
+    padding: 0.4rem;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

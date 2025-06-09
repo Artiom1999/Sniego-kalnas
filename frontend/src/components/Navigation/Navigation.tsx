@@ -15,14 +15,25 @@ export const Navigation = () => {
             alt="logo"
           />
         </Link>
+
+        <input
+          type="checkbox"
+          id="menu-toggle-checkbox"
+          className="menu-toggle-checkbox"
+        />
+        <label htmlFor="menu-toggle-checkbox" className="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
         <ul>
           <li>
             <Link to="/">Pagrindinis</Link>
           </li>
           <li>
-            <Link to="/nuoma">Nuoma</Link>
+            <Link to="/rent">Nuoma</Link>
           </li>
-
           <li>
             <Link to="/servisas">Servisas</Link>
           </li>
@@ -36,7 +47,7 @@ export const Navigation = () => {
               </li>
               <li>
                 <button onClick={logout} className="logout-button">
-                  Logout
+                  Atsijungti
                 </button>
               </li>
             </>

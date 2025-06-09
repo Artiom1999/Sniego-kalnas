@@ -36,10 +36,10 @@ export const UserUpdateModal: React.FC<UserUpdateModalProps> = ({
         <span className="close" onClick={onModalClose}>
           &times;
         </span>
-        <h2>Update User</h2>
+        <h2>Atnaujinti vartotoją</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Role:</label>
+            <label>Pareigos:</label>
             <select
               value={role}
               onChange={(e) => setRole(e.target.value)}
@@ -50,7 +50,7 @@ export const UserUpdateModal: React.FC<UserUpdateModalProps> = ({
             </select>
           </div>
           <button type="submit" className="btn">
-            Update User
+            Atnaujinti
           </button>
         </form>
       </div>

@@ -16,11 +16,11 @@ export const ReservationList = ({
 }: ReservationListProps) => {
   return (
     <div className="dashboard-card reservations-card">
-      <h3>Your Reservations</h3>
+      <h3>Jūsų rezervacijos</h3>
       {loading ? (
-        <p>Loading your reservations...</p>
+        <p>Įkeliamos jūsų rezervacijos...</p>
       ) : reservations.length === 0 ? (
-        <p>You don't have any reservations yet.</p>
+        <p>Jūs dar neturite jokių rezervacijų.</p>
       ) : (
         <div className="reservations-list">
           {reservations.map((reservation) => (

@@ -49,7 +49,7 @@ export const Dashboard = () => {
 
   // Handle reservation deletion
   const handleDelete = async (reservationId: string) => {
-    if (!confirm("Are you sure you want to cancel this reservation?")) return;
+    if (!confirm("Ar tikrai norite atšaukti šią rezervaciją?")) return;
 
     try {
       setDeleteLoading(reservationId);
@@ -86,7 +86,7 @@ export const Dashboard = () => {
             className={`tab-button ${activeTab === "user" ? "active" : ""}`}
             onClick={() => setActiveTab("user")}
           >
-            My Reservations
+            Mano rezervacijos
           </button>
           <button
             className={`tab-button ${
@@ -94,7 +94,7 @@ export const Dashboard = () => {
             }`}
             onClick={() => setActiveTab("admin-skis")}
           >
-            Manage Skis
+            Inventoriaus valdymas
           </button>
           <button
             className={`tab-button ${
@@ -102,7 +102,7 @@ export const Dashboard = () => {
             }`}
             onClick={() => setActiveTab("admin-reservations")}
           >
-            All Reservations
+            Visos rezervacijos
           </button>
           <button
             className={`tab-button ${
@@ -110,7 +110,7 @@ export const Dashboard = () => {
             }`}
             onClick={() => setActiveTab("admin-users")}
           >
-            All Users
+            Visi vartotojai
           </button>
         </div>
       )}

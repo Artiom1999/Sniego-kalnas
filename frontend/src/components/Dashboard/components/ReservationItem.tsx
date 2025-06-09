@@ -30,16 +30,16 @@ export const ReservationItem = ({
       </div>
       <div className="reservation-details">
         <p>
-          <strong>From:</strong> {formatDate(reservation.startDate)}
+          <strong>Nuo:</strong> {formatDate(reservation.startDate)}
         </p>
         <p>
-          <strong>To:</strong> {formatDate(reservation.endDate)}
+          <strong>Iki:</strong> {formatDate(reservation.endDate)}
         </p>
         <p>
-          <strong>Total:</strong> €{reservation.totalPrice}
+          <strong>Iš viso:</strong> €{reservation.totalPrice}
         </p>
         <p>
-          <strong>Booked on:</strong> {formatDate(reservation.createdAt)}
+          <strong>Rezervuota:</strong> {formatDate(reservation.createdAt)}
         </p>
       </div>
       <div className="reservation-actions">
@@ -48,7 +48,7 @@ export const ReservationItem = ({
           onClick={() => onDelete(reservation._id)}
           disabled={isDeleting}
         >
-          {isDeleting ? "Cancelling..." : "Cancel"}
+          {isDeleting ? "Cancelling..." : "Atšaukti"}
         </button>
       </div>
     </div>

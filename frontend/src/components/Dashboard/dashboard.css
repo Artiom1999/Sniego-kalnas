@@ -10,13 +10,13 @@
 
 .dashboard-header h1 {
   font-size: 2rem;
-  color: #333;
+  color: #444;
   margin-bottom: 10px;
 }
 
 .welcome-text {
   font-size: 1.1rem;
-  color: #666;
+  color: #777;
 }
 
 .dashboard-content {
@@ -26,24 +26,24 @@
 }
 
 .dashboard-card {
-  background-color: white;
+  background-color: #fafafa;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   padding: 25px;
 }
 
 .dashboard-card h3 {
   margin-top: 0;
   margin-bottom: 20px;
-  color: #333;
+  color: #444;
   font-size: 1.2rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #e5e7eb;
   padding-bottom: 10px;
 }
 
 .account-info p {
   margin: 10px 0;
-  color: #555;
+  color: #666;
 }
 
 .quick-actions {
@@ -53,7 +53,7 @@
 }
 
 .action-button {
-  background-color: #f1f3f4;
+  background-color: #f8f9fa;
   border: none;
   border-radius: 4px;
   padding: 12px 15px;
@@ -64,17 +64,17 @@
 }
 
 .action-button:hover {
-  background-color: #e8eaed;
+  background-color: #f0f1f3;
   transform: translateY(-2px);
 }
 
 .admin-action {
-  background-color: #d7e7fa;
-  color: #1a73e8;
+  background-color: #e7effa;
+  color: #357ae8;
 }
 
 .admin-action:hover {
-  background-color: #c4dbf9;
+  background-color: #dae7f9;
 }
 
 .reservations-card {
@@ -89,7 +89,7 @@
 
 .reservation-item {
   display: flex;
-  background-color: #f9f9f9;
+  background-color: #fbfbfb;
   border-radius: 6px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -97,13 +97,13 @@
 
 .reservation-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .reservation-ski-info {
   width: 200px;
   padding: 15px;
-  background-color: #f1f3f4;
+  background-color: #f6f7f8;
   display: flex;
   flex-direction: column;
 }
@@ -112,12 +112,12 @@
   margin-top: 0;
   margin-bottom: 10px;
   font-size: 1.1rem;
-  color: #333;
+  color: #444;
 }
 
-.reservation-car-image {
-  width: 100%;
-  height: 120px;
+.reservation-ski-image {
+  width: 90%;
+  height: 300px;
   object-fit: cover;
   border-radius: 4px;
 }
@@ -132,7 +132,7 @@
 
 .reservation-details p {
   margin: 6px 0;
-  color: #555;
+  color: #666;
 }
 
 .reservation-actions {
@@ -140,13 +140,13 @@
   justify-content: center;
   align-items: center;
   padding: 0 15px;
-  background-color: #f1f3f4;
-  border-left: 1px solid #e0e0e0;
+  background-color: #f6f7f8;
+  border-left: 1px solid #e2e2e2;
 }
 
 .delete-button {
-  background-color: #f8d7da;
-  color: #721c24;
+  background-color: #fceaea;
+  color: #a94442;
   border: none;
   border-radius: 4px;
   padding: 8px 15px;
@@ -156,7 +156,7 @@
 }
 
 .delete-button:hover {
-  background-color: #f5c6cb;
+  background-color: #f9d6d6;
 }
 
 .delete-button:disabled {
@@ -185,7 +185,7 @@
   .reservation-actions {
     padding: 15px;
     border-left: none;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid #e2e2e2;
   }
 }
 
@@ -203,33 +203,33 @@
   border-bottom: 3px solid transparent;
   cursor: pointer;
   font-weight: 600;
-  color: #666;
+  color: #777;
   transition: all 0.3s ease;
   margin-right: 5px;
 }
 
 .tab-button:hover {
-  color: #4a6fa5;
+  color: #5a81c5;
 }
 
 .tab-button.active {
-  color: #4a6fa5;
-  border-bottom: 3px solid #4a6fa5;
+  color: #5a81c5;
+  border-bottom: 3px solid #5a81c5;
 }
 
 /* Admin tab styling */
 .admin-tab {
-  background-color: #fff;
+  background-color: #fafafa;
   border-radius: 8px;
   padding: 25px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
   margin-bottom: 20px;
   grid-column: 1 / -1;
 }
 
 .admin-tab h2 {
   margin-top: 0;
-  color: #333;
+  color: #444;
   margin-bottom: 25px;
   font-size: 1.5rem;
 }
@@ -243,7 +243,7 @@
 
 /* Button styles */
 .btn {
-  background-color: #4a6fa5;
+  background-color: #5a81c5;
   color: white;
   border: none;
   padding: 8px 15px;
@@ -254,11 +254,11 @@
 }
 
 .btn:hover {
-  background-color: #3a5a8c;
+  background-color: #4a6fb2;
 }
 
 .btn-edit {
-  background-color: #2196f3;
+  background-color: #42a5f5;
   color: white;
   border: none;
   padding: 6px 12px;
@@ -270,82 +270,19 @@
   background-color: #1e88e5;
 }
 
-/* Modal styles */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  background-color: white;
-  padding: 25px;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 500px;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-}
-
-.close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 24px;
-  cursor: pointer;
-  color: #999;
-}
-
-.close:hover {
-  color: #333;
-}
-
-/* Form styles */
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: 500;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 8px 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.form-group textarea {
-  min-height: 80px;
-}
-
 /* Table styles */
 .reservation-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
-  background-color: white;
+  background-color: #fafafa;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .reservation-table th {
-  background-color: #4a6fa5;
+  background-color: #5a81c5;
   color: white;
   padding: 14px 15px;
   text-align: left;
@@ -355,16 +292,16 @@
 
 .reservation-table td {
   padding: 14px 15px;
-  border-bottom: 1px solid #eee;
-  color: #333;
+  border-bottom: 1px solid #eaeaea;
+  color: #444;
 }
 
 .reservation-table tr:nth-child(even) {
-  background-color: #f9fafc;
+  background-color: #f9f9f9;
 }
 
 .reservation-table tr:hover {
-  background-color: #f0f4f9;
+  background-color: #f0f2f5;
 }
 
 .ski-image {
@@ -372,7 +309,7 @@
   height: 45px;
   object-fit: cover;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
 .ski-details {
@@ -383,6 +320,33 @@
 
 .email {
   font-size: 0.85rem;
-  color: #666;
+  color: #777;
   margin-top: 3px;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95% !important; /* kad nebutu per platus modalas telefone */
+    padding: 1rem !important; /* mažesnis padding */
+    max-height: 90vh !important;
+    box-sizing: border-box;
+  }
+
+  .close {
+    top: 8px !important;
+    right: 12px !important;
+    font-size: 20px !important;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: 0.95rem !important;
+    padding: 0.4rem !important;
+  }
+
+  .btn {
+    font-size: 1rem !important;
+    padding: 0.6rem 1rem !important;
+  }
 }
